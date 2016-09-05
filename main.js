@@ -15,13 +15,13 @@ function timeOver() {
     console.log('timer running: ' + timerRunning);
 }
 
-timerRunning = false;
+var timerRunning = false;
 
 // Start and stop timer
 $('#timer').on('click', function(){
     // Start timer
     if (!timerRunning) {
-        timeoutID = setTimeout(timeOver, 2000);  // use the timeoutID to stop execution http://www.w3schools.com/js/js_timing.asp
+        var timeoutID = setTimeout(timeOver, 2000);  // use the timeoutID to stop execution http://www.w3schools.com/js/js_timing.asp
         $("#timer").html("<p>Timer running</p>");
         timerRunning = true;
         console.log('timer running: ' + timerRunning);
