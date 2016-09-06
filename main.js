@@ -12,6 +12,7 @@
 // TODO: when time === 0 BEEP!
 // TODO: when timeRemaining <= 5 sec.... beep beep beep beep beep
 // TODO: Enable a rest period of x min
+// TODO: Get the timer to display "25:00" to start with
 
 
 $('#pause').hide();
@@ -52,21 +53,21 @@ $(document).ready(function(){
         }
     }
 
-    //plus1min
+    // plus1min
     $('#plus1min').click(function() {
         time = parseInt( $("#time").html() );
         $("#time").html(time + 1);
         count = time + 1;
     });
 
-    //minus1min
+    // minus1min
     $('#minus1min').click(function() {
         time = parseInt( $("#time").html() );
         $("#time").html(time - 1);
         count = time - 1;
     });
 
-    //Play button
+    // Play button
     $('#start').click(function() {
         startTimer();
         $("#start, #minus1min, #plus1min").hide();

@@ -35,6 +35,13 @@ body {
 
 button {
     padding: 5px 10px 5px 10px;
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+}
+
+.plus-minus-buttons {
+    height: 30px;
 }
 
 .plus-minus-buttons button {
@@ -44,15 +51,3 @@ button {
     font-size: 20px;
     padding: 0;
 }
-
-
-/*#timer {
-    width: 200px;
-    height: 200px;
-    background: lime;
-    text-align: center;
-}*/
-
-/*#timer p {
-    padding-top: 80px;
-}*/
