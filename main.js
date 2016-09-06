@@ -9,6 +9,13 @@
 //'use strict';  // Recommended as best practice.
 
 
+// TODO: when time === 0 BEEP!
+// TODO: when timeRemaining <= 5 sec.... beep beep beep beep beep
+// TODO: Enable a rest period of x min
+
+
+$('#pause').hide();
+
 
 $(document).ready(function(){
 
@@ -17,6 +24,7 @@ $(document).ready(function(){
     //var timerSeconds = 2000;
     //var timerRunning = false;
     var timeoutID;
+    var isPaused = false;
 
     //console.log(count);
     //console.log("count");
@@ -58,19 +66,22 @@ $(document).ready(function(){
         count = time - 1;
     });
 
-    //Start button
+    //Play button
     $('#start').click(function() {
         startTimer();
         $("#start, #minus1min, #plus1min").hide();
+        $('#pause').show();
     });
 
     // Pause button
     $('#pause').click(function() {
-        if ( $("#pause").html() === "Pause") {
+        if (!isPaused) {
+            isPaused = true;
+            $("#pause").html('<i class="fa fa-play"></i>');
             clearInterval(timeoutId);
-            $("#pause").html("Continue");
-        } else {
-            $("#pause").html("Pause");
+        } else if (isPaused) {
+            isPaused = false;
+            $("#pause").html('<i class="fa fa-pause"></i>');
             count /= 60;
             startTimer();
         }
@@ -79,70 +90,14 @@ $(document).ready(function(){
 
     // Reset button
     $('#reset').click(function(){
+        isPaused = false;
         clearInterval(timeoutId);
         count = startCount;
         $("#time").html(startCount);
         $("#start, #minus1min, #plus1min").show();
-        $("#pause").html("Pause");
+        $("#pause").html('<i class="fa fa-pause"></i>').hide();
     });
 
 
 
 }); // end document.ready
-
-
-
-
-
-
-
-// function reset() {
-//     clearInterval(timeoutID);
-//     timerRunning = false;
-//     $("#time").html("25");
-// }
-
-// function pause() {
-//     clearTimeout(timeoutID);
-//     timerRunning = false;
-//     console.log('timer running: ' + timerRunning);
-// }
-//
-// function timeOver() {
-//     $("#timer").html("<p>25</p>");
-//     alert("Time's up!");
-//     timerRunning = false;
-//     console.log('timer running: ' + timerRunning);
-// }
-
-
-
-
-// Start and pause timer
-// $('#start').on('click', function(){
-//     // Start timer
-//     if (!timerRunning) {
-//         start();
-//     }
-//         //$("#timer").html("<p>Timer running</p>");
-//     // Resets timer - TODO: need this to pause, not reset the time. Can have another button to reset
-//     // } else if (timerRunning)  {
-//     //     pause();
-//     //     $("#timer").html("<p>Paused</p>");
-//     // }
-// });
-
-
-
-
-
-
-
-
-
-
-// TODO: when time === 0 beep!
-// TODO: reset button
-// TODO: Use setInterval instead of setTimeout so that it repeats?
-// TODO: Enable a rest period of x min
-// TODO: when timeRemaining == 5 sec.... beep beep beep beep beep
