@@ -11,13 +11,19 @@ body {
     margin: 0 auto;
 }
 
-#timer {
+#time {
+    display: inline;
+}
+
+
+
+/*#timer {
     width: 200px;
     height: 200px;
     background: lime;
     text-align: center;
-}
+}*/
 
-#timer p {
+/*#timer p {
     padding-top: 80px;
-}
+}*/
