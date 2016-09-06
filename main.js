@@ -9,6 +9,9 @@
 //'use strict';  // Recommended as best practice.
 
 
+// FIXME: when timer is set to 0 it goes bonkers: "-1:0-5"
+// TODO: see some of the features of this one: http://codepen.io/l-emi/full/PGwdAb/  it has 00:25:00 format, has sound, and nice layout, background gradually fades to red! and can enter a number for the minutes
+// TODO: enable clicking on the number to edit the actual html. Saw this in a demo app once.
 // TODO: when time === 0 BEEP!
 // TODO: when timeRemaining <= 5 sec.... beep beep beep beep beep
 // TODO: Enable a rest period of x min
